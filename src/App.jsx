@@ -1,5 +1,5 @@
 import Player from "./componets/Player"
-
+import GameBoard from "./componets/GameBoard"
 function App() {
   
 
@@ -7,10 +7,11 @@ function App() {
   <main>
     <div id="game-container">
         <ol id="players">
-          <Player playername="Player 1" symbol="X" />
-          <Player playername="Player 2" symbol="O" />
+          <Player initialName="Player 1" symbol="X" />
+          <Player initialName="Player 2" symbol="O" />
 
         </ol>
+        <GameBoard />
     </div>
   </main>
   )
