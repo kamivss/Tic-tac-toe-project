@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Define e exporta um componente funcional chamado Player, que recebe duas props: initialName e symbol
-export default function Player({ initialName, symbol , isActive}) {
+export default function Player({ initialName, symbol , isActive , onChangeName}) {
     // Declara dois estados locais: playerName e isEditing, inicializando-os com initialName e false, respectivamente
     const [playerName, setPlayerName] = useState(initialName);
     const [isEditing, setIsEditing] = useState(false);
@@ -9,6 +9,10 @@ export default function Player({ initialName, symbol , isActive}) {
     // Função que alterna o estado de isEditing entre true e false
     function handleClick() {
         setIsEditing((editing) => !editing);
+        if(isEditing)
+        {
+            onChangeName(symbol, playerName)
+        }
     }
 
     // Função que atualiza o estado playerName com o valor do input
